@@ -16,6 +16,15 @@ import javax.inject.Inject;
 public class MyBodyAdapter extends RecyclerView.Adapter<MyBodyAdapter.ViewHolder> {
     private ArrayList<String> list;
 
+    private onClickListener onClickListener;
+
+    public MyBodyAdapter.onClickListener getOnClickListener() {
+        return onClickListener;
+    }
+
+    public void setOnClickListener(MyBodyAdapter.onClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
 
     public  MyBodyAdapter(ArrayList<String> list) {
         this.list = list;
@@ -39,6 +48,14 @@ public class MyBodyAdapter extends RecyclerView.Adapter<MyBodyAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tv_name.setText(list.get(position));
+        holder.tv_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onClickListener!=null){
+                    onClickListener.onClick(v,position);
+                }
+            }
+        });
     }
 
     @Override
@@ -52,5 +69,8 @@ public class MyBodyAdapter extends RecyclerView.Adapter<MyBodyAdapter.ViewHolder
             super(itemView);
             tv_name = itemView.findViewById(R.id.tv_name);
         }
+    }
+    public interface onClickListener{
+        void onClick(View v,int position);
     }
 }

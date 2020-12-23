@@ -1,0 +1,72 @@
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:addStatesFromChildren="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:visibility="visible"
+            app:layout_behavior=".CustomBehavior">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@android:color/transparent"
+                app:expandedTitleGravity="top"
+                app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.zhpan.bannerview.BannerViewPager
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <!--如果还想悬浮其他控件放在这里即可-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-16dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <TableLayout
+                    android:layout_weight="1"
+                    android:id="@+id/tab_dynatypes"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:paddingTop="@dimen/dp_10"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:tabIndicatorHeight="0dip"
+                    app:tabMode="scrollable" />
+                <ImageView
+                    android:paddingTop="@dimen/dp_10"
+                    android:id="@+id/iv_entry_opus"
+                    android:layout_toRightOf="@+id/tab_dynatypes"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/dp_40" />
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_dynas_of_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

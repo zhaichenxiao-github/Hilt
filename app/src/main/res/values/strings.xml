@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Hilt</string>
     <string name="offset"/>
+    <string name="spd"/>
+    <string name="original_y"/>
     <string name="isUp"/>
 </resources>

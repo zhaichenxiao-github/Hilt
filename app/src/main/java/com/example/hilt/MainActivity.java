@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         initView();
         bean.setErrorMsg("哈哈哈哈");
         String errorMsg = bean.getErrorMsg();
@@ -47,36 +47,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        btn_ok = (Button) findViewById(R.id.btn_ok);
-        btn_ok.setOnClickListener(this);
-        rv = (RecyclerView) findViewById(R.id.rv);
-        MergeAdapter mergeAdapter = new MergeAdapter(myTitleAdapter, myBodyAdapter);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setAdapter(mergeAdapter);
-
-        test = (SlantedTextView) findViewById(R.id.test);
-        test.setText("哈哈哈哈")
-                .setTextSize(10)
-                .setSlantedLength(40)
-                .setSlantedBackgroundColor(R.color.permissionx_text_color)
-                .setTextColor(R.color.colorAccent)
-                .setMode(SlantedTextView.MODE_RIGHT);
+//        btn_ok = (Button) findViewById(R.id.btn_ok);
+//        btn_ok.setOnClickListener(this);
+//        rv = (RecyclerView) findViewById(R.id.rv);
+//        MergeAdapter mergeAdapter = new MergeAdapter(myTitleAdapter, myBodyAdapter);
+//        rv.setLayoutManager(new LinearLayoutManager(this));
+//        rv.setAdapter(mergeAdapter);
+//
+//        test = (SlantedTextView) findViewById(R.id.test);
+//        test.setText("哈哈哈哈")
+//                .setTextSize(10)
+//                .setSlantedLength(40)
+//                .setSlantedBackgroundColor(R.color.permissionx_text_color)
+//                .setTextColor(R.color.colorAccent)
+//                .setMode(SlantedTextView.MODE_RIGHT);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_ok:
-                SelfDialog selfDialog = new SelfDialog(MainActivity.this);
-                selfDialog.setTitle("标题");
-                selfDialog.setMessage("提示");
-                selfDialog.setNoOnclickListener("取消", new SelfDialog.onNoOnclickListener() {
-                    @Override
-                    public void onNoClick() {
-                        Toast.makeText(MainActivity.this, "取消" , Toast.LENGTH_SHORT).show();
-                    }
-                });
-                selfDialog.show();
+//        switch (v.getId()) {
+//            case R.id.btn_ok:
+//                SelfDialog selfDialog = new SelfDialog(MainActivity.this);
+//                selfDialog.setTitle("标题");
+//                selfDialog.setMessage("提示");
+//                selfDialog.setNoOnclickListener("取消", new SelfDialog.onNoOnclickListener() {
+//                    @Override
+//                    public void onNoClick() {
+//                        Toast.makeText(MainActivity.this, "取消" , Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//                selfDialog.show();
 //                PermissionX.init(this)
 //                        .permissions(Manifest.permission.READ_CONTACTS, Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE, Manifest.permission.READ_CALENDAR)
 //                        .onExplainRequestReason((scope, deniedList) -> {
@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                                }
 //                            }
 //                        });
-                break;
+//                break;
         }
     }
-}

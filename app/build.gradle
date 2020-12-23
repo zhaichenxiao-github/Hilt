@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.hilt"
-        minSdkVersion 16
+        minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -31,6 +31,8 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation project(path: ':httplibrary')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -50,4 +52,10 @@ dependencies {
     //
     implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha02'
     implementation 'com.haozhang.libary:android-slanted-textview:1.2'
+
+    implementation 'com.github.zhpanvip:BannerViewPager:3.4.0'
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.orhanobut:logger:2.2.0'
 }
